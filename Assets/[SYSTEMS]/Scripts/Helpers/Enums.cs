@@ -2,32 +2,20 @@ namespace Helpers
 {
     public struct Enums
     {
-        public enum InputActionMaps
+        public enum UIStates
         {
             None,
-            Player,
-            UI,
+            Menu,
+            Game,
+            Settings,
         }
 
-        public enum BehaviourStates
+        public enum PlayerStates
         {
-            /* Common */
             None,
             Move,
-            Death,
-            TakeRage,
-            /* Player */
-            BasicAttack,
-            AdvancedAttack,
-            Jump,
-            Dash,
-            Repulse,
-            DeadEye,
-            /* Enemy */
-            Patrol,
-            Idle,
             Attack,
-            Defence,
+            Death,
         }
 
     }
