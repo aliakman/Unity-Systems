@@ -1,20 +1,10 @@
-using UnityEngine;
-using State;
 using Helpers;
 
-public class UIGameState : BaseState<Enums.UIStates>
+namespace States.UIStates
 {
-    public UIGameState(Enums.UIStates _key, StateHandler<Enums.UIStates> _stateHandler) : base(_key, _stateHandler) { }
-
-
-    public override void EnterState()
+    public class UIGameState : BaseState<Enums.UIStates>
     {
-        Debug.Log($"{StateKey} State Enter");
-    }
+        public UIGameState(Enums.UIStates _key, StateHandler<Enums.UIStates> _stateHandler) : base(_key, _stateHandler) { }
 
-    public override void ExitState()
-    {
-        Debug.Log($"{StateKey} State Exit");
     }
-
 }

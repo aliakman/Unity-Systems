@@ -8,7 +8,7 @@ namespace Helpers
             Menu,
             Game,
             Settings,
-        }
+        };
 
         public enum PlayerStates
         {
@@ -16,7 +16,15 @@ namespace Helpers
             Move,
             Attack,
             Death,
-        }
+        };
+
+        public enum Axis
+        {
+            None,
+            X,
+            Y,
+            Z,
+        };
 
     }
 }

@@ -55,5 +55,32 @@ namespace Helpers
             return _cos;
         }
 
+        public static float Distance(Vector3 _a, Vector3 _b)
+        {
+            float _cX = _a.x - _b.x;
+            float _cY = _a.y - _b.y;
+            float _cZ = _a.z - _b.z;
+
+            float _distance = Mathf.Sqrt(_cX * _cX + _cY * _cY + _cZ * _cZ);
+
+            return _distance;
+        }
+
+        public static T[] ShuffledArray<T>(T[] _array, int _seed)
+        {
+            System.Random _prng = new System.Random(_seed);
+
+            for (int i = 0; i < _array.Length; i++)
+            {
+                int _randomIndex = _prng.Next(i, _array.Length);
+
+                T _tmpItem = _array[_randomIndex];
+                _array[_randomIndex] = _array[i];
+                _array[i] = _tmpItem;
+            }
+
+            return _array;
+        }
+
     }
 }

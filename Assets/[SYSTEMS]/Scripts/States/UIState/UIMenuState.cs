@@ -1,19 +1,10 @@
-using UnityEngine;
-using State;
 using Helpers;
 
-public class UIMenuState : BaseState<Enums.UIStates>
+namespace States.UIStates
 {
-    public UIMenuState(Enums.UIStates _key, StateHandler<Enums.UIStates> _stateHandler) : base(_key, _stateHandler) { }
-
-
-    public override void EnterState()
+    public class UIMenuState : BaseState<Enums.UIStates>
     {
-        Debug.Log($"{StateKey} State Enter");
-    }
+        public UIMenuState(Enums.UIStates _key, StateHandler<Enums.UIStates> _stateHandler) : base(_key, _stateHandler) { }
 
-    public override void ExitState()
-    {
-        Debug.Log($"{StateKey} State Exit");
     }
 }

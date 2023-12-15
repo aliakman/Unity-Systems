@@ -1,20 +1,10 @@
-using UnityEngine;
-using State;
 using Helpers;
 
-public class PlayerAttackState : BaseState<Enums.PlayerStates>
+namespace States.PlayerStates
 {
-    public PlayerAttackState(Enums.PlayerStates _key, StateHandler<Enums.PlayerStates> _stateHandler) : base(_key, _stateHandler) { }
-
-
-    public override void EnterState()
+    public class PlayerAttackState : BaseState<Enums.PlayerStates>
     {
-        Debug.Log($"{StateKey} State Enter");
-    }
+        public PlayerAttackState(Enums.PlayerStates _key, StateHandler<Enums.PlayerStates> _stateHandler) : base(_key, _stateHandler) { }
 
-    public override void ExitState()
-    {
-        Debug.Log($"{StateKey} State Exit");
     }
-
 }

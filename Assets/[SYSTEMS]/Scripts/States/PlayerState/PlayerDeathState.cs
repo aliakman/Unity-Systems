@@ -1,20 +1,10 @@
-using UnityEngine;
-using State;
 using Helpers;
 
-public class PlayerDeathState : BaseState<Enums.PlayerStates>
+namespace States.PlayerStates
 {
-    public PlayerDeathState(Enums.PlayerStates _key, StateHandler<Enums.PlayerStates> _stateHandler) : base(_key, _stateHandler) { }
-
-
-    public override void EnterState()
+    public class PlayerDeathState : BaseState<Enums.PlayerStates>
     {
-        Debug.Log($"{StateKey} State Enter");
+        public PlayerDeathState(Enums.PlayerStates _key, StateHandler<Enums.PlayerStates> _stateHandler) : base(_key, _stateHandler) { }
+    
     }
-
-    public override void ExitState()
-    {
-        Debug.Log($"{StateKey} State Exit");
-    }
-
 }

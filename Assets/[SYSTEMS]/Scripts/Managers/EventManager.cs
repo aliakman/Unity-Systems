@@ -9,5 +9,6 @@ public static class EventManager
 public struct ScriptHolder
 {
     public Func<PoolManager> PoolManager;
+    public Func<DataManager> DataManager;
 
 }
