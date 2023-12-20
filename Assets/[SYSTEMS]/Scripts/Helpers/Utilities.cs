@@ -82,5 +82,44 @@ namespace Helpers
             return _array;
         }
 
+        public static void SaveData(DataSO _data)
+        {
+            string _dataString = JsonUtility.ToJson(_data);
+            PlayerPrefs.SetString("data", _dataString);
+        }
+
+        public static void LoadData(DataSO _data)
+        {
+            if (!PlayerPrefs.HasKey("data"))
+            {
+                SaveData(_data);
+                return;
+            }
+
+            string _dataString = PlayerPrefs.GetString("data");
+            JsonUtility.FromJsonOverwrite(_dataString, _data);
+        }
+
+        public static int[] GetTime()
+        {
+            string _dateTime = System.DateTime.Now.ToString();
+            int[] _parsedTime = new int[3];
+
+            for (int i = 0; i < 3; i++)
+            {
+                _parsedTime[i] = int.Parse(_dateTime.Split(" ")[1].Split(":")[i]);
+            }
+
+            if(_dateTime.Split(" ").Length > 2)
+            {
+                if(_dateTime.Split(" ")[2] == "PM")
+                {
+                    _parsedTime[0] += 12;
+                }
+            }
+
+            return _parsedTime;
+        }
+
     }
 }
