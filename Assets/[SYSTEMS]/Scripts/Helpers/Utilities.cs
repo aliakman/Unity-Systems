@@ -121,5 +121,31 @@ namespace Helpers
             return _parsedTime;
         }
 
+        public static string[,] SplitCsvGrid(TextAsset _csvTextAsset)
+        {
+            string[] _lines = _csvTextAsset.text.Split("\n"[0]);
+
+            int _width = 0;
+            for (int i = 0; i < _lines.Length; i++)
+            {
+                string[] _row = _lines[i].Trim().Split(',');
+                _width = Mathf.Max(_width, _row.Length);
+            }
+
+            string[,] _outputGrid = new string[_lines.Length, _width];
+            for (int y = 0; y < _lines.Length; y++)
+            {
+                string[] _row = _lines[y].Trim().Split(',');
+                for (int x = 0; x < _row.Length; x++)
+                {
+                    _outputGrid[y, x] = _row[x].Trim(new char[] { '\"', ' ' });
+
+                    _outputGrid[y, x] = _outputGrid[y, x].Replace("\"\"", "\"");
+                }
+            }
+
+            return _outputGrid;
+        }
+
     }
 }
